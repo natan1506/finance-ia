@@ -32,7 +32,7 @@ import {
 } from "@prisma/client";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { upsertTransaction } from "../_actions/add-transaction";
+import { upsertTransaction } from "../_actions/upsert-transaction";
 import { Button } from "./ui/button";
 import {
   Select,

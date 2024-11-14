@@ -72,7 +72,7 @@ function TransactionsPieChart({
             />
           </PieChart>
         </ChartContainer>
-        <div className="space-y-2 p-7">
+        <div className="space-y-2 p-3">
           <PercentageItem
             icon={<TrendingUpIcon size={16} className="text-primary" />}
             title="Receita"

@@ -34,7 +34,7 @@ function TimeSelect() {
   return (
     <Select
       onValueChange={(value) => handleMonthChange(value)}
-      defaultValue={month}
+      defaultValue={month ?? ""}
     >
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Mês" />

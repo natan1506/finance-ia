@@ -19,7 +19,6 @@ export const POST = async (request: Request) => {
   if (!signature) {
     return NextResponse.error();
   }
-
   const text = await request.text();
 
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
@@ -31,6 +30,7 @@ export const POST = async (request: Request) => {
     signature,
     process.env.STRIPE_WEBHOOK_SECRET,
   );
+  console.log(event);
   switch (event.type) {
     case "invoice.paid": {
       //Atualizar o usuário com o novo plano

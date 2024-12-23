@@ -7,9 +7,16 @@ interface SummaryCardProps {
   title: string;
   amount: number;
   size?: "sm" | "lg";
+  userCanAddTransactions?: boolean;
 }
 
-function SummaryCard({ icon, title, amount, size = "sm" }: SummaryCardProps) {
+function SummaryCard({
+  icon,
+  title,
+  amount,
+  size = "sm",
+  userCanAddTransactions,
+}: SummaryCardProps) {
   return (
     <Card className={`${size === "lg" ? "bg-white bg-opacity-5" : ""}`}>
       <CardHeader className="flex-row items-center gap-2">
@@ -28,7 +35,11 @@ function SummaryCard({ icon, title, amount, size = "sm" }: SummaryCardProps) {
           }).format(amount)}
         </p>
 
-        {size === "lg" && <AddTransactionButton />}
+        {size === "lg" && (
+          <AddTransactionButton
+            userCanAddTransaction={userCanAddTransactions}
+          />
+        )}
       </CardContent>
     </Card>
   );
